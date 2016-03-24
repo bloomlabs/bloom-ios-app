@@ -5,23 +5,23 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Profile View Controller-->
-        <scene sceneID="XhE-xw-VNP">
+        <!--Lab View Controller-->
+        <scene sceneID="Snx-mo-5Za">
             <objects>
-                <viewController id="rXy-j8-e3B" customClass="ProfileViewController" customModule="Bloom_Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NLr-rD-86X" customClass="LabViewController" customModule="Bloom_Mobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ugw-7a-LhX"/>
-                        <viewControllerLayoutGuide type="bottom" id="6xT-kI-g6C"/>
+                        <viewControllerLayoutGuide type="top" id="2LQ-El-tGh"/>
+                        <viewControllerLayoutGuide type="bottom" id="2JU-h2-QZg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="pj8-4Y-COR">
+                    <view key="view" contentMode="scaleToFill" id="CAu-3w-3Pi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iNC-qO-td7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HKs-nF-8Y6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="49" y="296"/>
+            <point key="canvasLocation" x="547" y="217"/>
         </scene>
     </scenes>
 </document>

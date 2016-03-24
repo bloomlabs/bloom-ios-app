@@ -19,6 +19,8 @@
 		6E77951A1CA00E1500A9532D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7795181CA00E1500A9532D /* LaunchScreen.storyboard */; };
 		6E7795251CA00E1500A9532D /* Bloom_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7795241CA00E1500A9532D /* Bloom_MobileTests.swift */; };
 		6E7795301CA00E1500A9532D /* Bloom_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E77952F1CA00E1500A9532D /* Bloom_MobileUITests.swift */; };
+		6EA8F7931CA37E7300FD8CB6 /* lab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EA8F7921CA37E7300FD8CB6 /* lab.storyboard */; };
+		6EA8F7951CA3833100FD8CB6 /* LabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8F7941CA3833100FD8CB6 /* LabViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		6E77952B1CA00E1500A9532D /* Bloom-MobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bloom-MobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E77952F1CA00E1500A9532D /* Bloom_MobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bloom_MobileUITests.swift; sourceTree = "<group>"; };
 		6E7795311CA00E1500A9532D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6EA8F7921CA37E7300FD8CB6 /* lab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = lab.storyboard; sourceTree = "<group>"; };
+		6EA8F7941CA3833100FD8CB6 /* LabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +129,7 @@
 		6E77950C1CA00E1400A9532D /* Bloom-Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				6EA8F7911CA37E4E00FD8CB6 /* lab */,
 				5FE23BEA1CA2ABAD000C1FD5 /* profile */,
 				5FE23BE51CA2AA50000C1FD5 /* events */,
 				6E77950D1CA00E1400A9532D /* AppDelegate.swift */,
@@ -154,6 +159,15 @@
 				6E7795311CA00E1500A9532D /* Info.plist */,
 			);
 			path = "Bloom-MobileUITests";
+			sourceTree = "<group>";
+		};
+		6EA8F7911CA37E4E00FD8CB6 /* lab */ = {
+			isa = PBXGroup;
+			children = (
+				6EA8F7921CA37E7300FD8CB6 /* lab.storyboard */,
+				6EA8F7941CA3833100FD8CB6 /* LabViewController.swift */,
+			);
+			name = lab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,6 +274,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6EA8F7931CA37E7300FD8CB6 /* lab.storyboard in Resources */,
 				6E77951A1CA00E1500A9532D /* LaunchScreen.storyboard in Resources */,
 				5FE23BE71CA2AA92000C1FD5 /* events.storyboard in Resources */,
 				5FE23BEE1CA2ABD2000C1FD5 /* profile.storyboard in Resources */,
@@ -291,6 +306,7 @@
 			files = (
 				6E7795121CA00E1400A9532D /* SecondViewController.swift in Sources */,
 				5FE23BE91CA2AB6E000C1FD5 /* EventsViewController.swift in Sources */,
+				6EA8F7951CA3833100FD8CB6 /* LabViewController.swift in Sources */,
 				5FE23BEC1CA2ABBF000C1FD5 /* ProfileViewController.swift in Sources */,
 				6E77950E1CA00E1400A9532D /* AppDelegate.swift in Sources */,
 				6E7795101CA00E1400A9532D /* FirstViewController.swift in Sources */,
