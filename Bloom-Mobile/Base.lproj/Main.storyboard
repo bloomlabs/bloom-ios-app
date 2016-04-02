@@ -1,10 +1,73 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2F6-gg-6ub">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Bloom Login View Controller-->
+        <scene sceneID="YlK-Nm-xd2">
+            <objects>
+                <viewController id="2F6-gg-6ub" customClass="BloomLoginViewController" customModule="Bloom_Mobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xSj-R1-uTR"/>
+                        <viewControllerLayoutGuide type="bottom" id="2tH-WI-Ei7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MF0-TH-xQB">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please sign in first" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEb-CM-i2o">
+                                <rect key="frame" x="231" y="139" width="139" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bloom App" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="far-q3-vbi">
+                                <rect key="frame" x="258" y="28" width="84" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7X-xB-msc" customClass="GIDSignInButton">
+                                <rect key="frame" x="180" y="197" width="240" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="I7X-xB-msc" firstAttribute="centerX" secondItem="GEb-CM-i2o" secondAttribute="centerX" id="Dke-fa-HzV"/>
+                            <constraint firstItem="GEb-CM-i2o" firstAttribute="centerX" secondItem="MF0-TH-xQB" secondAttribute="centerX" id="GvF-V4-fWk"/>
+                            <constraint firstItem="I7X-xB-msc" firstAttribute="centerX" secondItem="MF0-TH-xQB" secondAttribute="centerX" id="Hgn-ZX-Abm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="far-q3-vbi" secondAttribute="trailing" constant="468" id="Jdq-WF-CRa"/>
+                            <constraint firstItem="far-q3-vbi" firstAttribute="top" secondItem="xSj-R1-uTR" secondAttribute="bottom" constant="8" symbolic="YES" id="bWm-4U-LbZ"/>
+                            <constraint firstItem="far-q3-vbi" firstAttribute="top" secondItem="xSj-R1-uTR" secondAttribute="bottom" constant="37" id="d2J-iU-MgZ"/>
+                            <constraint firstItem="far-q3-vbi" firstAttribute="centerX" secondItem="MF0-TH-xQB" secondAttribute="centerX" id="dJZ-gP-yMr"/>
+                            <constraint firstItem="far-q3-vbi" firstAttribute="leading" secondItem="MF0-TH-xQB" secondAttribute="leadingMargin" constant="8" id="emP-ny-XHF"/>
+                            <constraint firstItem="far-q3-vbi" firstAttribute="centerX" secondItem="MF0-TH-xQB" secondAttribute="centerX" id="gSf-Yc-gi4"/>
+                            <constraint firstItem="I7X-xB-msc" firstAttribute="top" secondItem="GEb-CM-i2o" secondAttribute="bottom" constant="37" id="np1-1a-dfQ"/>
+                            <constraint firstItem="GEb-CM-i2o" firstAttribute="top" secondItem="far-q3-vbi" secondAttribute="bottom" constant="90" id="sfp-Zm-lKd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Jdq-WF-CRa"/>
+                                <exclude reference="d2J-iU-MgZ"/>
+                                <exclude reference="emP-ny-XHF"/>
+                                <exclude reference="gSf-Yc-gi4"/>
+                                <exclude reference="Dke-fa-HzV"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="signInButton" destination="I7X-xB-msc" id="INv-Ln-DR2"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="loggedin" id="s7U-Bn-IFm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3ds-kK-QIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-354" y="93"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>

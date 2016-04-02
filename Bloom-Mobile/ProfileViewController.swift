@@ -9,6 +9,11 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    @IBOutlet weak var startupName: UITextField!
+    @IBOutlet weak var startupDescription: UITextView!
+    @IBOutlet weak var fullName: UITextField!
+    @IBOutlet weak var interests: UITableView!
+    @IBOutlet weak var skills: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +24,4 @@ class ProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
 }

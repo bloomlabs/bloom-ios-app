@@ -11,16 +11,17 @@
 		5FE23BE91CA2AB6E000C1FD5 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE23BE81CA2AB6E000C1FD5 /* EventsViewController.swift */; };
 		5FE23BEC1CA2ABBF000C1FD5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE23BEB1CA2ABBF000C1FD5 /* ProfileViewController.swift */; };
 		5FE23BEE1CA2ABD2000C1FD5 /* profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FE23BED1CA2ABD2000C1FD5 /* profile.storyboard */; };
+		6E5A62AD1CABD9BE00C9EC05 /* BloomLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A62AC1CABD9BE00C9EC05 /* BloomLoginViewController.swift */; };
 		6E77950E1CA00E1400A9532D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E77950D1CA00E1400A9532D /* AppDelegate.swift */; };
-		6E7795101CA00E1400A9532D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E77950F1CA00E1400A9532D /* FirstViewController.swift */; };
-		6E7795121CA00E1400A9532D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7795111CA00E1400A9532D /* SecondViewController.swift */; };
 		6E7795151CA00E1500A9532D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7795131CA00E1500A9532D /* Main.storyboard */; };
 		6E7795171CA00E1500A9532D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E7795161CA00E1500A9532D /* Assets.xcassets */; };
 		6E77951A1CA00E1500A9532D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7795181CA00E1500A9532D /* LaunchScreen.storyboard */; };
 		6E7795251CA00E1500A9532D /* Bloom_MobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E7795241CA00E1500A9532D /* Bloom_MobileTests.swift */; };
 		6E7795301CA00E1500A9532D /* Bloom_MobileUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E77952F1CA00E1500A9532D /* Bloom_MobileUITests.swift */; };
+		6E95677C1CAFDD06001EBC59 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E95677B1CAFDD06001EBC59 /* GoogleService-Info.plist */; };
 		6EA8F7931CA37E7300FD8CB6 /* lab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6EA8F7921CA37E7300FD8CB6 /* lab.storyboard */; };
 		6EA8F7951CA3833100FD8CB6 /* LabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8F7941CA3833100FD8CB6 /* LabViewController.swift */; };
+		F026DDD9C00480015A14FF50 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009D611BD6D4C4AA3FEC486 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,10 +46,10 @@
 		5FE23BE81CA2AB6E000C1FD5 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		5FE23BEB1CA2ABBF000C1FD5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5FE23BED1CA2ABD2000C1FD5 /* profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = profile.storyboard; sourceTree = "<group>"; };
+		6E5A62A91CABD8EF00C9EC05 /* Bloom-Mobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bloom-Mobile-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		6E5A62AC1CABD9BE00C9EC05 /* BloomLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloomLoginViewController.swift; sourceTree = "<group>"; };
 		6E77950A1CA00E1400A9532D /* Bloom-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bloom-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E77950D1CA00E1400A9532D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6E77950F1CA00E1400A9532D /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		6E7795111CA00E1400A9532D /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		6E7795141CA00E1500A9532D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6E7795161CA00E1500A9532D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6E7795191CA00E1500A9532D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,8 +60,12 @@
 		6E77952B1CA00E1500A9532D /* Bloom-MobileUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bloom-MobileUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E77952F1CA00E1500A9532D /* Bloom_MobileUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bloom_MobileUITests.swift; sourceTree = "<group>"; };
 		6E7795311CA00E1500A9532D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6E95677B1CAFDD06001EBC59 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Bloom-Mobile/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6EA8F7921CA37E7300FD8CB6 /* lab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = lab.storyboard; sourceTree = "<group>"; };
 		6EA8F7941CA3833100FD8CB6 /* LabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabViewController.swift; sourceTree = "<group>"; };
+		B647CCB0926F535512C30D59 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		E009D611BD6D4C4AA3FEC486 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1D28038AA98962F5B0BFBD6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +73,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F026DDD9C00480015A14FF50 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1BA3E16C680A14C92DFE5C81 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B647CCB0926F535512C30D59 /* Pods.debug.xcconfig */,
+				F1D28038AA98962F5B0BFBD6 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		5FE23BE51CA2AA50000C1FD5 /* events */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,10 +124,13 @@
 		6E7795011CA00E1400A9532D = {
 			isa = PBXGroup;
 			children = (
+				6E95677B1CAFDD06001EBC59 /* GoogleService-Info.plist */,
 				6E77950C1CA00E1400A9532D /* Bloom-Mobile */,
 				6E7795231CA00E1500A9532D /* Bloom-MobileTests */,
 				6E77952E1CA00E1500A9532D /* Bloom-MobileUITests */,
 				6E77950B1CA00E1400A9532D /* Products */,
+				1BA3E16C680A14C92DFE5C81 /* Pods */,
+				B7EA65C54CAF271A97FC0B0C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,16 +147,16 @@
 		6E77950C1CA00E1400A9532D /* Bloom-Mobile */ = {
 			isa = PBXGroup;
 			children = (
+				6E5A62A91CABD8EF00C9EC05 /* Bloom-Mobile-Bridging-Header.h */,
 				6EA8F7911CA37E4E00FD8CB6 /* lab */,
 				5FE23BEA1CA2ABAD000C1FD5 /* profile */,
 				5FE23BE51CA2AA50000C1FD5 /* events */,
 				6E77950D1CA00E1400A9532D /* AppDelegate.swift */,
-				6E77950F1CA00E1400A9532D /* FirstViewController.swift */,
-				6E7795111CA00E1400A9532D /* SecondViewController.swift */,
 				6E7795131CA00E1500A9532D /* Main.storyboard */,
 				6E7795161CA00E1500A9532D /* Assets.xcassets */,
 				6E7795181CA00E1500A9532D /* LaunchScreen.storyboard */,
 				6E77951B1CA00E1500A9532D /* Info.plist */,
+				6E5A62AC1CABD9BE00C9EC05 /* BloomLoginViewController.swift */,
 			);
 			path = "Bloom-Mobile";
 			sourceTree = "<group>";
@@ -170,6 +188,14 @@
 			name = lab;
 			sourceTree = "<group>";
 		};
+		B7EA65C54CAF271A97FC0B0C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E009D611BD6D4C4AA3FEC486 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,9 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E7795341CA00E1500A9532D /* Build configuration list for PBXNativeTarget "Bloom-Mobile" */;
 			buildPhases = (
+				A97959F143E3A3124FFF6C28 /* Check Pods Manifest.lock */,
 				6E7795061CA00E1400A9532D /* Sources */,
 				6E7795071CA00E1400A9532D /* Frameworks */,
 				6E7795081CA00E1400A9532D /* Resources */,
+				082B381BFEAEFED3CC819BEF /* Embed Pods Frameworks */,
+				D0AA020817B04C6995801116 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -232,7 +261,7 @@
 		6E7795021CA00E1400A9532D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Bloom;
 				TargetAttributes = {
@@ -274,6 +303,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E95677C1CAFDD06001EBC59 /* GoogleService-Info.plist in Resources */,
 				6EA8F7931CA37E7300FD8CB6 /* lab.storyboard in Resources */,
 				6E77951A1CA00E1500A9532D /* LaunchScreen.storyboard in Resources */,
 				5FE23BE71CA2AA92000C1FD5 /* events.storyboard in Resources */,
@@ -299,17 +329,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		082B381BFEAEFED3CC819BEF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A97959F143E3A3124FFF6C28 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D0AA020817B04C6995801116 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6E7795061CA00E1400A9532D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E7795121CA00E1400A9532D /* SecondViewController.swift in Sources */,
 				5FE23BE91CA2AB6E000C1FD5 /* EventsViewController.swift in Sources */,
+				6E5A62AD1CABD9BE00C9EC05 /* BloomLoginViewController.swift in Sources */,
 				6EA8F7951CA3833100FD8CB6 /* LabViewController.swift in Sources */,
 				5FE23BEC1CA2ABBF000C1FD5 /* ProfileViewController.swift in Sources */,
 				6E77950E1CA00E1400A9532D /* AppDelegate.swift in Sources */,
-				6E7795101CA00E1400A9532D /* FirstViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,23 +526,30 @@
 		};
 		6E7795351CA00E1500A9532D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B647CCB0926F535512C30D59 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Bloom-Mobile/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "au.org.bloom.Bloom-Mobile";
+				PRODUCT_BUNDLE_IDENTIFIER = au.org.bloom.bloommobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloom-Mobile-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		6E7795361CA00E1500A9532D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F1D28038AA98962F5B0BFBD6 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Bloom-Mobile/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "au.org.bloom.Bloom-Mobile";
+				PRODUCT_BUNDLE_IDENTIFIER = au.org.bloom.bloommobile;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloom-Mobile-Bridging-Header.h";
 			};
 			name = Release;
 		};
