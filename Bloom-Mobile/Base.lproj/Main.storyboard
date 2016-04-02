@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I7X-xB-msc" customClass="GIDSignInButton">
-                                <rect key="frame" x="180" y="197" width="240" height="50"/>
+                                <rect key="frame" x="180" y="193" width="240" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -42,6 +42,7 @@
                             <constraint firstItem="I7X-xB-msc" firstAttribute="centerX" secondItem="MF0-TH-xQB" secondAttribute="centerX" id="Hgn-ZX-Abm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="far-q3-vbi" secondAttribute="trailing" constant="468" id="Jdq-WF-CRa"/>
                             <constraint firstItem="far-q3-vbi" firstAttribute="top" secondItem="xSj-R1-uTR" secondAttribute="bottom" constant="8" symbolic="YES" id="bWm-4U-LbZ"/>
+                            <constraint firstItem="I7X-xB-msc" firstAttribute="top" secondItem="GEb-CM-i2o" secondAttribute="bottom" constant="33" id="cK3-ZB-jdU"/>
                             <constraint firstItem="far-q3-vbi" firstAttribute="top" secondItem="xSj-R1-uTR" secondAttribute="bottom" constant="37" id="d2J-iU-MgZ"/>
                             <constraint firstItem="far-q3-vbi" firstAttribute="centerX" secondItem="MF0-TH-xQB" secondAttribute="centerX" id="dJZ-gP-yMr"/>
                             <constraint firstItem="far-q3-vbi" firstAttribute="leading" secondItem="MF0-TH-xQB" secondAttribute="leadingMargin" constant="8" id="emP-ny-XHF"/>
@@ -56,6 +57,7 @@
                                 <exclude reference="emP-ny-XHF"/>
                                 <exclude reference="gSf-Yc-gi4"/>
                                 <exclude reference="Dke-fa-HzV"/>
+                                <exclude reference="np1-1a-dfQ"/>
                             </mask>
                         </variation>
                     </view>
