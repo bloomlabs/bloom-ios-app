@@ -24,6 +24,25 @@ class BloomLoginViewController: UIViewController, GIDSignInUIDelegate {
         // Dispose of any resources that can be recreated.
     }
     
+    func onGoogleLogin(signIn: GIDSignIn!, user: GIDGoogleUser!) {
+        let url = NSURL(string: "http://apply.bloom.org.au/api/get_user_information")
+        let req = NSMutableURLRequest(URL: url!, cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 60)
+        req.HTTPMethod = "POST";
+        let data:NSDictionary = ["userID" : user.userID, "access_token" : user.authentication.accessToken, "clientID" : user.authentication.clientID]
+        req.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(data, options: [])
+        let task = NSURLSession.sharedSession().dataTaskWithRequest(req) {(data, response, error) in
+            if error != nil {
+                print(error)
+                return
+            }
+            print(NSString(data: data!, encoding: NSUTF8StringEncoding))
+            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
+        }
+        
+        task.resume()
+        
+        self.performSegueWithIdentifier("loggedin", sender: self)
+    }
 
     /*
     // MARK: - Navigation

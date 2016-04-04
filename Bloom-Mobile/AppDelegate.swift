@@ -41,7 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
                 withError error: NSError!) {
         if (error == nil) {
             // TODO: verify with bloom app
-            self.window?.rootViewController?.performSegueWithIdentifier("loggedin", sender: self)
+            let login = self.window?.rootViewController as! BloomLoginViewController
+            login.onGoogleLogin(signIn, user: user)
         } else {
             print("\(error.localizedDescription)")
         }
