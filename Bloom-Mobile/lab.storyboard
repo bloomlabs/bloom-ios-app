@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Lab View Controller-->
+        <!--Lab-->
         <scene sceneID="Snx-mo-5Za">
             <objects>
                 <viewController id="NLr-rD-86X" customClass="LabViewController" customModule="Bloom_Mobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,10 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Lab" image="second" id="5KO-hY-jkS"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HKs-nF-8Y6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="547" y="217"/>
+            <point key="canvasLocation" x="1359" y="217"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="second" width="30" height="30"/>
+    </resources>
 </document>

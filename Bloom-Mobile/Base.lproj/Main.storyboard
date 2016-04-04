@@ -63,7 +63,7 @@
                     </view>
                     <connections>
                         <outlet property="signInButton" destination="I7X-xB-msc" id="INv-Ln-DR2"/>
-                        <segue destination="49e-Tb-3d3" kind="show" identifier="loggedin" id="s7U-Bn-IFm"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="loggedin" id="w02-Pz-i86"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ds-kK-QIH" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -74,16 +74,16 @@
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
+                        <segue destination="7V9-Lo-fOp" kind="relationship" relationship="viewControllers" id="teV-4h-NDG"/>
                         <segue destination="yQ1-kg-FYP" kind="relationship" relationship="viewControllers" id="SUk-E0-YGq"/>
                         <segue destination="Ak2-Wl-M3B" kind="relationship" relationship="viewControllers" id="D6q-dk-bsh"/>
-                        <segue destination="7V9-Lo-fOp" kind="relationship" relationship="viewControllers" id="teV-4h-NDG"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>

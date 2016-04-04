@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Events View Controller-->
+        <!--Events-->
         <scene sceneID="gkF-CO-LMb">
             <objects>
                 <viewController id="JAl-BW-8I5" customClass="EventsViewController" customModule="Bloom_Mobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,10 +18,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Events" image="second" id="6FU-g6-SyE"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nPg-pN-sCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-150" y="432"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="second" width="30" height="30"/>
+    </resources>
 </document>
