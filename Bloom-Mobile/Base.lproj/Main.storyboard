@@ -34,6 +34,9 @@
                                 <rect key="frame" x="180" y="193" width="240" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HI5-Xh-BGG">
+                                <rect key="frame" x="290" y="85" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -41,6 +44,7 @@
                             <constraint firstItem="GEb-CM-i2o" firstAttribute="centerX" secondItem="MF0-TH-xQB" secondAttribute="centerX" id="GvF-V4-fWk"/>
                             <constraint firstItem="I7X-xB-msc" firstAttribute="centerX" secondItem="MF0-TH-xQB" secondAttribute="centerX" id="Hgn-ZX-Abm"/>
                             <constraint firstAttribute="trailingMargin" secondItem="far-q3-vbi" secondAttribute="trailing" constant="468" id="Jdq-WF-CRa"/>
+                            <constraint firstItem="HI5-Xh-BGG" firstAttribute="top" secondItem="far-q3-vbi" secondAttribute="bottom" constant="36" id="PAo-zW-inb"/>
                             <constraint firstItem="far-q3-vbi" firstAttribute="top" secondItem="xSj-R1-uTR" secondAttribute="bottom" constant="8" symbolic="YES" id="bWm-4U-LbZ"/>
                             <constraint firstItem="I7X-xB-msc" firstAttribute="top" secondItem="GEb-CM-i2o" secondAttribute="bottom" constant="33" id="cK3-ZB-jdU"/>
                             <constraint firstItem="far-q3-vbi" firstAttribute="top" secondItem="xSj-R1-uTR" secondAttribute="bottom" constant="37" id="d2J-iU-MgZ"/>
@@ -62,6 +66,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="HI5-Xh-BGG" id="RFz-Zo-UcZ"/>
                         <outlet property="signInButton" destination="I7X-xB-msc" id="INv-Ln-DR2"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="loggedin" id="w02-Pz-i86"/>
                     </connections>
