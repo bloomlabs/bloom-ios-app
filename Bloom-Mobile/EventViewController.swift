@@ -24,12 +24,13 @@ class EventViewController: UIViewController, UINavigationControllerDelegate {
 
         // Do any additional setup after loading the view.
         
+        if let event = event { //We know we will have it but you still need to check because otherwise it doesn't like it
         self.summary.text = event.summary
         self.eventDescription.text = event.eventDescription
         self.location.text = event.location
         self.startTime.text = event.startTime
         self.endTime.text = event.endTime
-    
+        }
     }
 
     override func didReceiveMemoryWarning() {

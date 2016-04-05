@@ -16,17 +16,23 @@ class EventsListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+       loadSampleEvents()
     }
 
+    func loadSampleEvents(){
+        
+        let event1 = Event(summary: "First event", eventDescription: "Boring", location: "Nowhere", startTime: "Now", endTime: "Later")
+        let event2 = Event(summary: "Second event", eventDescription: "Bleh", location: "Somewhere", startTime: "Later", endTime: "Now")
+        
+        events += [event1!, event2!] //for some reason we need the exclamation mark. I think it forces an unwrap because Event could be nil
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
 
     // MARK: - Table view data source
 
@@ -106,8 +112,8 @@ class EventsListTableViewController: UITableViewController {
             if let selectedEventCell = sender as? EventTableViewCell {
                 
                 let indexPath = tableView.indexPathForCell(selectedEventCell)!
-                let selectedMeal = events[indexPath.row]
-                eventDetailViewController.event = selectedMeal
+                let selectedEvent = events[indexPath.row]
+                eventDetailViewController.event = selectedEvent
             }
         }
 
