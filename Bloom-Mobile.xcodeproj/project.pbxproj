@@ -11,6 +11,7 @@
 		5FE23BE91CA2AB6E000C1FD5 /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE23BE81CA2AB6E000C1FD5 /* EventsViewController.swift */; };
 		5FE23BEC1CA2ABBF000C1FD5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FE23BEB1CA2ABBF000C1FD5 /* ProfileViewController.swift */; };
 		5FE23BEE1CA2ABD2000C1FD5 /* profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FE23BED1CA2ABD2000C1FD5 /* profile.storyboard */; };
+		6E14342F1CB3ABCD00F4A961 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E14342E1CB3ABCD00F4A961 /* API.swift */; };
 		6E5A62AD1CABD9BE00C9EC05 /* BloomLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5A62AC1CABD9BE00C9EC05 /* BloomLoginViewController.swift */; };
 		6E77950E1CA00E1400A9532D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E77950D1CA00E1400A9532D /* AppDelegate.swift */; };
 		6E7795151CA00E1500A9532D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6E7795131CA00E1500A9532D /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		5FE23BE81CA2AB6E000C1FD5 /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		5FE23BEB1CA2ABBF000C1FD5 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		5FE23BED1CA2ABD2000C1FD5 /* profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = profile.storyboard; sourceTree = "<group>"; };
+		6E14342E1CB3ABCD00F4A961 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		6E5A62A91CABD8EF00C9EC05 /* Bloom-Mobile-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bloom-Mobile-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		6E5A62AC1CABD9BE00C9EC05 /* BloomLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BloomLoginViewController.swift; sourceTree = "<group>"; };
 		6E77950A1CA00E1400A9532D /* Bloom-Mobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bloom-Mobile.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -157,6 +159,7 @@
 				6E7795181CA00E1500A9532D /* LaunchScreen.storyboard */,
 				6E77951B1CA00E1500A9532D /* Info.plist */,
 				6E5A62AC1CABD9BE00C9EC05 /* BloomLoginViewController.swift */,
+				6E14342E1CB3ABCD00F4A961 /* API.swift */,
 			);
 			path = "Bloom-Mobile";
 			sourceTree = "<group>";
@@ -386,6 +389,7 @@
 				6E5A62AD1CABD9BE00C9EC05 /* BloomLoginViewController.swift in Sources */,
 				6EA8F7951CA3833100FD8CB6 /* LabViewController.swift in Sources */,
 				5FE23BEC1CA2ABBF000C1FD5 /* ProfileViewController.swift in Sources */,
+				6E14342F1CB3ABCD00F4A961 /* API.swift in Sources */,
 				6E77950E1CA00E1400A9532D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
