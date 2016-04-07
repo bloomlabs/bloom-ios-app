@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JAl-BW-8I5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hpC-qy-apx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
@@ -54,13 +54,8 @@
                             <outlet property="delegate" destination="ryo-rT-Nz8" id="RGS-Mz-KnS"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="f8q-EI-jek">
-                        <barButtonItem key="leftBarButtonItem" systemItem="done" id="vsp-wC-bjI">
-                            <connections>
-                                <segue destination="JAl-BW-8I5" kind="presentation" id="Iqc-MS-vOD"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="f8q-EI-jek"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TXp-Sy-8bE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -137,43 +132,12 @@
             <point key="canvasLocation" x="1425" y="-29"/>
         </scene>
         <!--Events-->
-        <scene sceneID="gkF-CO-LMb">
-            <objects>
-                <viewController id="JAl-BW-8I5" customClass="EventsViewController" customModule="Bloom_Mobile" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Moy-Tx-YRL"/>
-                        <viewControllerLayoutGuide type="bottom" id="LSp-v6-eE1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="G28-Ww-beF">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqv-zM-kK7">
-                                <rect key="frame" x="271" y="285" width="59" height="30"/>
-                                <state key="normal" title="Click Me"/>
-                                <connections>
-                                    <segue destination="hpC-qy-apx" kind="presentation" id="Zfd-x7-4l2"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="fqv-zM-kK7" firstAttribute="centerY" secondItem="G28-Ww-beF" secondAttribute="centerY" id="axs-dn-2ld"/>
-                            <constraint firstItem="fqv-zM-kK7" firstAttribute="centerX" secondItem="G28-Ww-beF" secondAttribute="centerX" id="cYU-ed-5C6"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Events" image="second" id="6FU-g6-SyE"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="nPg-pN-sCk" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-670" y="738"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="eiH-si-eL0">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hpC-qy-apx" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Events" id="og3-e9-vxJ"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="G2p-ry-k9G">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -188,7 +152,4 @@
             <point key="canvasLocation" x="53" y="-29"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="second" width="30" height="30"/>
-    </resources>
 </document>
