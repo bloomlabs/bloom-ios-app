@@ -12,19 +12,70 @@ class EventsListTableViewController: UITableViewController {
     
     //MARK:Properties
     var events = [Event]()
-
+    var itemsList = [[String:AnyObject]]()
+    
     override func viewDidLoad() {
+        //super.viewDidLoad()
+        
+        //Make the Get Request
+        //iOS key: AIzaSyAAYFnjURSYHRd-s6poOOcHythjM6PcuBc
+        //Browser key: AIzaSyA5Kjx_Xh94WsAAOoNBpSU234LhPc4_8cI
+        
+        let url = NSURL(string: "https://www.googleapis.com/calendar/v3/calendars/bloom.org.au_qfi4gfo8ocv0fof2lr8j0nr25c@group.calendar.google.com/events?key=AIzaSyA5Kjx_Xh94WsAAOoNBpSU234LhPc4_8cI")
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in //begin closure?
+            
+            do {
+                let json = try NSJSONSerialization.JSONObjectWithData(data!, options: .AllowFragments)
+                if let resources = json["items"] as? [[String: AnyObject]] { //I think json["items"] is an array of dictionaries where all keys are Strings and their corresponding values can be any type of Object
+                    
+                    self.loadActualEvents(resources)
+                    
+                    
+                }
+                
+            } catch {
+                print("error serializing JSON: \(error)")
+                //completionHandler()
+                
+            }
+        }
+        task.resume() //This runs async and the JSON closure above doesn't take effect until this has finished
+        
+        
         super.viewDidLoad()
-
-       loadSampleEvents()
     }
-
+    
+    //MARK: Load Events helper functions
+    
+    
     func loadSampleEvents(){
         
         let event1 = Event(summary: "First event", eventDescription: "Boring", location: "Nowhere", startTime: "Now", endTime: "Later")
         let event2 = Event(summary: "Second event", eventDescription: "Bleh", location: "Somewhere", startTime: "Later", endTime: "Now")
         
         events += [event1!, event2!] //for some reason we need the exclamation mark. I think it forces an unwrap because Event could be nil
+        
+        super.viewDidLoad()
+    }
+    
+    func loadActualEvents(itemList:[[String:AnyObject]]){
+        /*print("here")
+        for event in itemList {
+            let summary = event["summary"]
+            let newEvent = Event(summary: "Test", eventDescription: "Testing", location: "here", startTime: "now", endTime: "then")
+            events.append(newEvent!)
+            print("here")
+            
+        }
+        
+        
+        super.viewDidLoad()*/
+        
+        let event1 = Event(summary: "First event", eventDescription: "Boring", location: "Nowhere", startTime: "Now", endTime: "Later")
+        let event2 = Event(summary: "Second event", eventDescription: "Bleh", location: "Somewhere", startTime: "Later", endTime: "Now")
+        
+        events += [event1!, event2!] //for some reason we need the exclamation mark. I think it forces an unwrap because Event could be nil
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -33,19 +84,19 @@ class EventsListTableViewController: UITableViewController {
     }
     
     
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-
+        
         return 1
     }
-
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-
+        
         return events.count
     }
-
+    
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
@@ -53,7 +104,7 @@ class EventsListTableViewController: UITableViewController {
         let cellIdentifier = "EventCell"
         
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as!EventTableViewCell
-
+        
         // Fetches the appropriate event for the data source layout.
         let event = events[indexPath.row]
         cell.summary.text = event.summary
@@ -63,42 +114,42 @@ class EventsListTableViewController: UITableViewController {
         return cell
     }
     
-
+    
     /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
+     // Override to support conditional editing of the table view.
+     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the specified item to be editable.
+     return true
+     }
+     */
+    
     /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
+     // Override to support editing the table view.
+     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+     if editingStyle == .Delete {
+     // Delete the row from the data source
+     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+     } else if editingStyle == .Insert {
+     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     }
+     }
+     */
+    
     /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
+     // Override to support rearranging the table view.
+     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+     
+     }
+     */
+    
     /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
+     // Override to support conditional rearranging of the table view.
+     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+     // Return false if you do not want the item to be re-orderable.
+     return true
+     }
+     */
+    
     
     // MARK: - Navigation
     
@@ -116,8 +167,8 @@ class EventsListTableViewController: UITableViewController {
                 eventDetailViewController.event = selectedEvent
             }
         }
-
+        
     }
-
-
+    
+    
 }
