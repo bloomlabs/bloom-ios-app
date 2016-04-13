@@ -38,9 +38,10 @@ class BloomLoginViewController: UIViewController, GIDSignInUIDelegate {
                 print(json["error"])
                 return
             }
-            let token:String = json["token"]
-            let user_id:String = json["id"]
-            API.postJSON("http://apply.bloom.org.au/api/profiles/" + user_id, data: nil, completionHandler: {(data, response, error) in
+            let token:String = json["token"] as! String
+            let user_id:String = json["id"] as! String
+            API.setUserToken(token, user_id: user_id)
+            API.postJSON("http://apply.bloom.org.au/api/profiles/" + user_id, data: NSDictionary(), completionHandler: {(data, response, error) in
                 if error != nil {
                     print(error)
                     return
@@ -50,8 +51,8 @@ class BloomLoginViewController: UIViewController, GIDSignInUIDelegate {
                     print(json["error"])
                     return
                 }
+                self.activityIndicator.stopAnimating()
             })
-            self.activityIndicator.stopAnimating()
         })
         
         

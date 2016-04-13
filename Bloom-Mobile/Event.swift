@@ -22,7 +22,8 @@ class Event: NSObject {
     //MARK: Initialization
     
     init?(summary:String!, eventDescription:String?, location:String?, startTime:String?, endTime:String?) {
-
+        
+        super.init()
         // Initialize stored properties.
         self.summary = summary
         self.eventDescription = eventDescription
@@ -30,7 +31,6 @@ class Event: NSObject {
         self.startTime = startTime
         self.endTime = endTime
         
-        super.init()
         
         if(summary.isEmpty){
             return nil
