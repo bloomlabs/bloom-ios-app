@@ -28,6 +28,7 @@
 		6EA8F7951CA3833100FD8CB6 /* LabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EA8F7941CA3833100FD8CB6 /* LabViewController.swift */; };
 		6EBCB8BC1CBE40E100708A13 /* Environment.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6EBCB8BB1CBE40E100708A13 /* Environment.plist */; };
 		6EBCB8BE1CBE412F00708A13 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBCB8BD1CBE412F00708A13 /* Environment.swift */; };
+		6EBCB8C01CBE426400708A13 /* MemberProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EBCB8BF1CBE426400708A13 /* MemberProfile.swift */; };
 		F026DDD9C00480015A14FF50 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E009D611BD6D4C4AA3FEC486 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +78,7 @@
 		6EA8F7941CA3833100FD8CB6 /* LabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabViewController.swift; sourceTree = "<group>"; };
 		6EBCB8BB1CBE40E100708A13 /* Environment.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Environment.plist; path = "Bloom-Mobile/Environment.plist"; sourceTree = "<group>"; };
 		6EBCB8BD1CBE412F00708A13 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		6EBCB8BF1CBE426400708A13 /* MemberProfile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemberProfile.swift; sourceTree = "<group>"; };
 		B647CCB0926F535512C30D59 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		E009D611BD6D4C4AA3FEC486 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1D28038AA98962F5B0BFBD6 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 			children = (
 				5FE23BEB1CA2ABBF000C1FD5 /* ProfileViewController.swift */,
 				5FE23BED1CA2ABD2000C1FD5 /* profile.storyboard */,
+				6EBCB8BF1CBE426400708A13 /* MemberProfile.swift */,
 			);
 			name = profile;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				6E14342F1CB3ABCD00F4A961 /* API.swift in Sources */,
 				5F801ACB1CB2A36F00717A41 /* Event.swift in Sources */,
 				6E77950E1CA00E1400A9532D /* AppDelegate.swift in Sources */,
+				6EBCB8C01CBE426400708A13 /* MemberProfile.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
