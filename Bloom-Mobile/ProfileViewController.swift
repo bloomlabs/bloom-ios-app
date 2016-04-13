@@ -9,6 +9,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
+    @IBOutlet weak var userDescription: UITextField!
     @IBOutlet weak var startupName: UITextField!
     @IBOutlet weak var startupDescription: UITextView!
     @IBOutlet weak var fullName: UITextField!

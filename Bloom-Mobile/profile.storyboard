@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rXy-j8-e3B">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rXy-j8-e3B">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ve-DI-PIn">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8Ve-DI-PIn">
                                 <rect key="frame" x="273" y="12" width="55" height="30"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Name">
@@ -69,6 +69,11 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="A little about me" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VNs-9e-hvb">
+                                <rect key="frame" x="243" y="43" width="115" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -78,6 +83,7 @@
                             <constraint firstItem="ha5-7T-FV5" firstAttribute="leading" secondItem="PHr-FY-0PI" secondAttribute="leading" id="7ez-OW-jGI"/>
                             <constraint firstItem="aff-QX-JhK" firstAttribute="leading" secondItem="2Wm-dK-v2I" secondAttribute="leading" id="8da-IJ-KgY"/>
                             <constraint firstItem="0nW-iV-Tao" firstAttribute="top" secondItem="Bja-Gu-lct" secondAttribute="bottom" constant="11" id="9Fz-1N-CA1"/>
+                            <constraint firstItem="2Wm-dK-v2I" firstAttribute="top" secondItem="VNs-9e-hvb" secondAttribute="top" id="9KI-SX-cCY"/>
                             <constraint firstItem="Bja-Gu-lct" firstAttribute="leading" secondItem="ZJi-6S-hCo" secondAttribute="leading" id="AYC-f1-IxM"/>
                             <constraint firstItem="2Wm-dK-v2I" firstAttribute="top" secondItem="8Ve-DI-PIn" secondAttribute="bottom" constant="15" id="Aqs-c4-fod"/>
                             <constraint firstItem="Bja-Gu-lct" firstAttribute="leading" secondItem="2Wm-dK-v2I" secondAttribute="leading" id="Ar5-vg-vHq"/>
@@ -91,9 +97,12 @@
                             <constraint firstItem="aff-QX-JhK" firstAttribute="leading" secondItem="2Wm-dK-v2I" secondAttribute="leading" id="ITl-N9-u0M"/>
                             <constraint firstItem="ZJi-6S-hCo" firstAttribute="leading" secondItem="ha5-7T-FV5" secondAttribute="leading" id="KxU-4P-TIs"/>
                             <constraint firstItem="8Ve-DI-PIn" firstAttribute="top" secondItem="ugw-7a-LhX" secondAttribute="bottom" constant="-8" id="LAU-qE-mvi"/>
+                            <constraint firstItem="2Wm-dK-v2I" firstAttribute="top" secondItem="VNs-9e-hvb" secondAttribute="bottom" constant="-3" id="Lw8-M4-8HO"/>
                             <constraint firstItem="8Ve-DI-PIn" firstAttribute="centerX" secondItem="pj8-4Y-COR" secondAttribute="centerX" id="NGO-55-fZS"/>
                             <constraint firstItem="ha5-7T-FV5" firstAttribute="leading" secondItem="2Wm-dK-v2I" secondAttribute="leading" id="NJb-uP-avb"/>
                             <constraint firstItem="8Ve-DI-PIn" firstAttribute="centerY" secondItem="pj8-4Y-COR" secondAttribute="centerY" id="Oey-Hf-7c2"/>
+                            <constraint firstItem="VNs-9e-hvb" firstAttribute="top" secondItem="8Ve-DI-PIn" secondAttribute="bottom" constant="-2" id="W4H-kf-YbC"/>
+                            <constraint firstItem="VNs-9e-hvb" firstAttribute="centerX" secondItem="pj8-4Y-COR" secondAttribute="centerX" id="Wnc-o8-q3n"/>
                             <constraint firstItem="8Ve-DI-PIn" firstAttribute="top" secondItem="ugw-7a-LhX" secondAttribute="bottom" constant="-8" id="dnQ-bE-7Ch"/>
                             <constraint firstItem="ZJi-6S-hCo" firstAttribute="top" secondItem="PHr-FY-0PI" secondAttribute="bottom" constant="12" id="dnb-yJ-drl"/>
                             <constraint firstItem="Bja-Gu-lct" firstAttribute="top" secondItem="ZJi-6S-hCo" secondAttribute="bottom" constant="7" id="igA-WA-OzI"/>
@@ -112,6 +121,8 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="4LU-tk-feE"/>
+                                <exclude reference="9KI-SX-cCY"/>
+                                <exclude reference="Aqs-c4-fod"/>
                                 <exclude reference="kNJ-VL-9lX"/>
                                 <exclude reference="Ecn-DN-3zF"/>
                                 <exclude reference="7ez-OW-jGI"/>
@@ -141,6 +152,7 @@
                         <outlet property="skills" destination="aff-QX-JhK" id="ce7-BR-PN2"/>
                         <outlet property="startupDescription" destination="ha5-7T-FV5" id="afJ-eL-SOk"/>
                         <outlet property="startupName" destination="PHr-FY-0PI" id="khK-qY-Uh3"/>
+                        <outlet property="userDescription" destination="VNs-9e-hvb" id="Yxo-sP-Aak"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNC-qO-td7" userLabel="First Responder" sceneMemberID="firstResponder"/>

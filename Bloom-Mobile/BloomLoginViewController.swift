@@ -40,18 +40,11 @@ class BloomLoginViewController: UIViewController, GIDSignInUIDelegate {
             }
             let token:String = json["token"] as! String
             let user_id:String = json["id"] as! String
-            API.postJSON("http://apply.bloom.org.au/api/profiles/" + user_id, data: NSDictionary(), completionHandler: {(data, response, error) in
-                if error != nil {
-                    print(error)
-                    return
-                }
-                let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
-                if json["error"] != nil {
-                    print(json["error"])
-                    return
-                }
+            API.setUserToken(token, user_id: user_id)
+            MemberProfile.loadProfile(user_id, callback: {(profile) in
+                MemberProfile.setPrimaryProfile(profile!)
+                self.activityIndicator.stopAnimating()
             })
-            self.activityIndicator.stopAnimating()
         })
         
         
