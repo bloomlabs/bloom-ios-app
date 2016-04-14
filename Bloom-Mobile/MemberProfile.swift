@@ -8,13 +8,13 @@
 
 import Foundation
 class MemberProfile {
-    var startupName:String
-    var startupDescription:String
-    var firstName:String
-    var lastName:String
-    var userDescription:String
-    var interests: [String]
-    var skills: [String]
+    var startupName:String = ""
+    var startupDescription:String = ""
+    var firstName:String = ""
+    var lastName:String = ""
+    var userDescription:String = ""
+    var interests: [String]  = []
+    var skills: [String] = []
     
     static func loadProfile(user_id:String, callback: (MemberProfile?)->(Void)){
         API.postJSON("http://apply.bloom.org.au/api/profiles/" + user_id, data: NSDictionary(), completionHandler: {(data, response, error) in
@@ -30,24 +30,24 @@ class MemberProfile {
                 return
             }
             let profile = MemberProfile()
-            profile.userDescription = json["profile"]["description"]
+            /*profile.userDescription = json["profile"]["description"]
             profile.startupName = json["profile"]["startup_name"]
             profile.startupDescription = json["profile"]["startup_description"]
             profile.firstName = json["firstname"]
             profile.lastName = json["lastname"]
             profile.interests = json["profile"]["interests"]
-            profile.skills = json["profile"]["skills"]
+            profile.skills = json["profile"]["skills"]*/
             callback(profile)
         })
     }
     
-    static func primaryProfile() {
-        return primaryProfile
+    static func primaryProfile() ->MemberProfile{
+        return primary_profile
     }
     
     static func setPrimaryProfile(profile:MemberProfile){
-        primaryProfile = profile
+        primary_profile = profile
     }
     
-    private static var primaryProfile
+    private static var primary_profile: MemberProfile = MemberProfile()
 }

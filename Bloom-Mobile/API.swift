@@ -23,7 +23,7 @@ class API {
         req.addValue("application/json", forHTTPHeaderField: "Content-Type")
         req.addValue("application/json", forHTTPHeaderField: "Accept")
         
-        req.addValue("Token token=" + Environment.getEnv("BloomAPIKey"), forHTTPHeaderField: "Authorization")
+        req.addValue("Token token=" + (Environment.getEnv("BloomAPIKey") as! String), forHTTPHeaderField: "Authorization")
         req.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(data, options: [])
         let task = NSURLSession.sharedSession().dataTaskWithRequest(req, completionHandler: completionHandler)
         task.resume()

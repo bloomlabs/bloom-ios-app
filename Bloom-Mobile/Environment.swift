@@ -8,8 +8,8 @@
 
 import Foundation
 class Environment {
-    static var env:NSDictionary = NSDictionary.init(contentsOfFile: NSBundle.mainBundle().pathForResource("Environment", ofType: "plist"))
-    static func getEnv(key:String) {
-        return env.objectForKey(key)
+    static var env:NSDictionary = NSDictionary.init(contentsOfFile: NSBundle.mainBundle().pathForResource("Environment", ofType: "plist")!)!
+    static func getEnv(key:String)->AnyObject {
+        return env.objectForKey(key)!
     }
 }

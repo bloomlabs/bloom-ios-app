@@ -9,10 +9,10 @@
 import UIKit
 
 class EventsListTableViewController: UITableViewController {
-    
+    @IBOutlet weak var table: UITableView!
     //MARK:Properties
     var events = [Event]()
-    var itemsList = [[String:AnyObject]]()
+    //var itemsList = [[String:AnyObject]]()
     
     override func viewDidLoad() {
         //super.viewDidLoad()
@@ -59,22 +59,26 @@ class EventsListTableViewController: UITableViewController {
     }
     
     func loadActualEvents(itemList:[[String:AnyObject]]){
-        /*print("here")
+        print("here")
         for event in itemList {
             let summary = event["summary"]
-            let newEvent = Event(summary: "Test", eventDescription: "Testing", location: "here", startTime: "now", endTime: "then")
+            let newEvent = Event(summary: summary as! String, eventDescription: "Testing", location: "here", startTime: "now", endTime: "then")
             events.append(newEvent!)
-            print("here")
+            //print("here")
             
         }
         
+        dispatch_async(dispatch_get_main_queue()) {
+            self.tableView.reloadData()
+        }
         
-        super.viewDidLoad()*/
         
-        let event1 = Event(summary: "First event", eventDescription: "Boring", location: "Nowhere", startTime: "Now", endTime: "Later")
+        //super.viewDidLoad()
+        
+        /*let event1 = Event(summary: "First event", eventDescription: "Boring", location: "Nowhere", startTime: "Now", endTime: "Later")
         let event2 = Event(summary: "Second event", eventDescription: "Bleh", location: "Somewhere", startTime: "Later", endTime: "Now")
         
-        events += [event1!, event2!] //for some reason we need the exclamation mark. I think it forces an unwrap because Event could be nil
+        events += [event1!, event2!] //for some reason we need the exclamation mark. I think it forces an unwrap because Event could be nil*/
         
     }
     
