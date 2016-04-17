@@ -10,6 +10,7 @@ import Foundation
 class API {
     static var token:String!
     static var user_id:String!
+    static let base_url:String = "https://bloom-app.herokuapp.com/"
     
     static func setUserToken(token: String, user_id: String) {
         API.token = token
@@ -17,14 +18,15 @@ class API {
     }
     
     static func postJSON(url: String, data: NSDictionary, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let url = NSURL(string: url)
+        let url = NSURL(string: base_url + url)
         let req = NSMutableURLRequest(URL: url!, cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 60)
-        req.HTTPMethod = "POST"
-        req.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        req.addValue("application/json", forHTTPHeaderField: "Accept")
+        req.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        req.setValue("application/json", forHTTPHeaderField: "Accept")
+        req.setValue("Token token=" + (Environment.getEnv("BloomAPIKey") as! String), forHTTPHeaderField: "Authorization")
+        let postData:NSData = try! NSJSONSerialization.dataWithJSONObject(data, options: [])
         
-        req.addValue("Token token=" + (Environment.getEnv("BloomAPIKey") as! String), forHTTPHeaderField: "Authorization")
-        req.HTTPBody = try! NSJSONSerialization.dataWithJSONObject(data, options: [])
+        req.HTTPBody = postData
+        req.HTTPMethod = "POST"
         let task = NSURLSession.sharedSession().dataTaskWithRequest(req, completionHandler: completionHandler)
         task.resume()
     }

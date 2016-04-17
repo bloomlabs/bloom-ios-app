@@ -40,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
     func signIn(signIn: GIDSignIn!, didSignInForUser user: GIDGoogleUser!,
                 withError error: NSError!) {
         if (error == nil) {
-            // TODO: verify with bloom app
             let login = self.window?.rootViewController as! BloomLoginViewController
             login.onGoogleLogin(signIn, user: user)
         } else {
@@ -50,7 +49,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
     
     func signIn(signIn: GIDSignIn!, didDisconnectWithUser user:GIDGoogleUser!,
                 withError error: NSError!) {
-        // TODO: go to main view controller
     }
 
     func applicationWillResignActive(application: UIApplication) {

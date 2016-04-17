@@ -28,18 +28,23 @@ class BloomLoginViewController: UIViewController, GIDSignInUIDelegate {
     func onGoogleLogin(signIn: GIDSignIn!, user: GIDGoogleUser!) {
         self.activityIndicator.startAnimating()
         let data:NSDictionary = ["id_token" : user.authentication.idToken, "audience": user.authentication.clientID]
-        API.postJSON("http://apply.bloom.org.au/api/user_auth_token", data: data,  completionHandler: {(data, response, error) in
+        API.postJSON("api/user_auth_token", data: data,  completionHandler: {(data, response, error) in
             if error != nil {
                 print(error)
                 return
             }
-            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
+            var json:NSDictionary = ["error": "Parse failed"]
+            do{
+                json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
+            } catch {
+                print(String.init(data: data!, encoding: NSUTF8StringEncoding))
+            }
             if json["error"] != nil {
-                print(json["error"])
+                print("Error fetching user token: " + (json["error"] as! String))
                 return
             }
-            let token:String = json["token"] as! String
-            let user_id:String = json["id"] as! String
+            let token:String = String(json["token"]!)
+            let user_id:String = String(json["id"]!)
             API.setUserToken(token, user_id: user_id)
             MemberProfile.loadProfile(user_id, callback: {(profile) in
                 MemberProfile.setPrimaryProfile(profile!)

@@ -4,7 +4,6 @@
 use_frameworks!
 pod 'Google/SignIn'
 
-
 target 'Bloom-Mobile' do
 
 end

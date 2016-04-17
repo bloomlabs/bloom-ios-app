@@ -16,32 +16,42 @@ class MemberProfile {
     var interests: [String]  = []
     var skills: [String] = []
     
-    static func loadProfile(user_id:String, callback: (MemberProfile?)->(Void)){
-        API.postJSON("http://apply.bloom.org.au/api/profiles/" + user_id, data: NSDictionary(), completionHandler: {(data, response, error) in
+    static func loadProfile(user_id: String, callback: (MemberProfile?)->(Void)){
+        API.postJSON("api/profiles/" + user_id, data: NSDictionary(), completionHandler: {(data, response, error) in
             if error != nil {
                 print(error)
                 callback(nil)
                 return
             }
-            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
+            var json:NSDictionary = ["error":"Parse failed"]
+            do {
+                json = try NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
+            } catch {
+                print(String.init(data: data!, encoding: NSUTF8StringEncoding))
+            }
             if json["error"] != nil {
                 print(json["error"])
-                callback(nil)
+                if json["error"] as! String == "Not Found" {
+                    callback(MemberProfile())
+                } else {
+                    callback(nil)
+                }
                 return
-            }
+            } 
             let profile = MemberProfile()
-            /*profile.userDescription = json["profile"]["description"]
-            profile.startupName = json["profile"]["startup_name"]
-            profile.startupDescription = json["profile"]["startup_description"]
-            profile.firstName = json["firstname"]
-            profile.lastName = json["lastname"]
-            profile.interests = json["profile"]["interests"]
-            profile.skills = json["profile"]["skills"]*/
+            let profilePart:NSDictionary = json["profile"] as! NSDictionary
+            profile.firstName = json["firstname"] as! String
+            profile.lastName = json["lastname"] as! String
+            profile.userDescription = profilePart["description"] as! String
+            profile.startupName = profilePart["startup_name"] as! String
+            profile.startupDescription = profilePart["startup_description"] as! String
+            profile.interests = profilePart["interests"] as! [String]
+            profile.skills = profilePart["skills"] as! [String]
             callback(profile)
         })
     }
     
-    static func primaryProfile() ->MemberProfile{
+    static func primaryProfile() -> MemberProfile {
         return primary_profile
     }
     

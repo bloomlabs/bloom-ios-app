@@ -34,7 +34,7 @@
                                 <rect key="frame" x="180" y="193" width="240" height="50"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HI5-Xh-BGG">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HI5-Xh-BGG">
                                 <rect key="frame" x="290" y="85" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -50,9 +50,11 @@
                             <constraint firstItem="far-q3-vbi" firstAttribute="top" secondItem="xSj-R1-uTR" secondAttribute="bottom" constant="37" id="d2J-iU-MgZ"/>
                             <constraint firstItem="far-q3-vbi" firstAttribute="centerX" secondItem="MF0-TH-xQB" secondAttribute="centerX" id="dJZ-gP-yMr"/>
                             <constraint firstItem="far-q3-vbi" firstAttribute="leading" secondItem="MF0-TH-xQB" secondAttribute="leadingMargin" constant="8" id="emP-ny-XHF"/>
+                            <constraint firstItem="HI5-Xh-BGG" firstAttribute="leading" secondItem="MF0-TH-xQB" secondAttribute="leadingMargin" constant="270" id="flL-L1-9FQ"/>
                             <constraint firstItem="far-q3-vbi" firstAttribute="centerX" secondItem="MF0-TH-xQB" secondAttribute="centerX" id="gSf-Yc-gi4"/>
                             <constraint firstItem="I7X-xB-msc" firstAttribute="top" secondItem="GEb-CM-i2o" secondAttribute="bottom" constant="37" id="np1-1a-dfQ"/>
                             <constraint firstItem="GEb-CM-i2o" firstAttribute="top" secondItem="far-q3-vbi" secondAttribute="bottom" constant="90" id="sfp-Zm-lKd"/>
+                            <constraint firstItem="HI5-Xh-BGG" firstAttribute="centerX" secondItem="MF0-TH-xQB" secondAttribute="centerX" id="zje-DE-bfT"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -62,6 +64,7 @@
                                 <exclude reference="gSf-Yc-gi4"/>
                                 <exclude reference="Dke-fa-HzV"/>
                                 <exclude reference="np1-1a-dfQ"/>
+                                <exclude reference="flL-L1-9FQ"/>
                             </mask>
                         </variation>
                     </view>
@@ -75,10 +78,10 @@
             </objects>
             <point key="canvasLocation" x="-354" y="93"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Bloom Tab Bar Controller View Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="BloomTabBarControllerViewController" customModule="Bloom_Mobile" customModuleProvider="target" sceneMemberID="viewController">
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
