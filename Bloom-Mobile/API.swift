@@ -16,8 +16,8 @@ class API {
         API.token = token
         API.user_id = user_id
     }
-    
-    static func postJSON(url: String, data: NSDictionary, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void) {
+
+    static func postJSON(url: String, data: NSDictionary, completionHandler: (NSData?, NSURLResponse?, NSError?) -> Void)->NSURLSessionTask {
         let url = NSURL(string: base_url + url)
         let req = NSMutableURLRequest(URL: url!, cachePolicy: .UseProtocolCachePolicy, timeoutInterval: 60)
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
@@ -29,5 +29,6 @@ class API {
         req.HTTPMethod = "POST"
         let task = NSURLSession.sharedSession().dataTaskWithRequest(req, completionHandler: completionHandler)
         task.resume()
+        return task
     }
 }

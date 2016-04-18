@@ -15,9 +15,21 @@ class MemberProfile {
     var userDescription:String = ""
     var interests: [String]  = []
     var skills: [String] = []
+    var id: String = ""
+    var currentTask: NSURLSessionTask?
+    
+    func update() {
+        if self.currentTask?.state == .Running {
+            self.currentTask?.cancel()
+        }
+        let data:NSDictionary = ["profile":["description": userDescription, "startup_name":startupName, "startup_description":startupDescription, "interests":interests, "skills":skills], "firstname":self.firstName, "lastname":self.lastName, "user_token":API.token]
+        self.currentTask = API.postJSON("api/profiles/" + id + "/update", data: data, completionHandler: {(data, response, error) in
+            print(error)
+        })
+    }
     
     static func loadProfile(user_id: String, callback: (MemberProfile?)->(Void)){
-        API.postJSON("api/profiles/" + user_id, data: NSDictionary(), completionHandler: {(data, response, error) in
+        API.postJSON("api/profiles/" + user_id, data: ["user_token":API.token], completionHandler: {(data, response, error) in
             if error != nil {
                 print(error)
                 callback(nil)
@@ -40,13 +52,15 @@ class MemberProfile {
             } 
             let profile = MemberProfile()
             let profilePart:NSDictionary = json["profile"] as! NSDictionary
+            print(json)
             profile.firstName = json["firstname"] as! String
             profile.lastName = json["lastname"] as! String
             profile.userDescription = profilePart["description"] as! String
             profile.startupName = profilePart["startup_name"] as! String
             profile.startupDescription = profilePart["startup_description"] as! String
-            profile.interests = profilePart["interests"] as! [String]
-            profile.skills = profilePart["skills"] as! [String]
+            profile.interests = profilePart["interests"] as? [String] ?? []
+            profile.skills = profilePart["skills"] as? [String] ?? []
+            profile.id = user_id
             callback(profile)
         })
     }

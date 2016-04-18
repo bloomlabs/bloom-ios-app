@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     @IBOutlet weak var userDescription: UITextField!
     @IBOutlet weak var startupName: UITextField!
     @IBOutlet weak var startupDescription: UITextView!
@@ -17,6 +17,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var interestsAddButton: UIButton!
     @IBOutlet weak var skills: UITableView!
     @IBOutlet weak var skillsAddButton: UIButton!
+    var profile:MemberProfile?
     var interestsList:[String] = []
     var skillsList:[String] = []
     
@@ -28,6 +29,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         interestsList = profile.interests
         skillsList = profile.skills
         
+        self.profile = profile
         userDescription.enabled = editable
         startupName.enabled = editable
         fullName.enabled = editable
@@ -49,46 +51,88 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         skills.reloadData()
     }
     
-    func tableView(tableView: UITableView, editingStyleForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCellEditingStyle {
-        return .Delete
-    }
-    
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return tableView.isEqual(interests) ? interestsList.count : skillsList.count
     }
     
+    
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        var arr:[String] = tableView.isEqual(interests) ? interestsList : skillsList
         if editingStyle == .Delete {
-            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
-            arr.removeAtIndex(indexPath.row)
+            tableView.isEqual(interests) ? interestsList.removeAtIndex(indexPath.row) : skillsList.removeAtIndex(indexPath.row)
+            tableView.reloadData()
+            profileChanged(tableView)
         }
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        for touch in touches {
+            if let superview = touch.view {
+                for subview in superview.subviews {
+                    if ((subview as? EditableTableTextField) != nil) {
+                        subview.becomeFirstResponder()
+                    }
+                }
+            }
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let id = "BloomUserProfile" + (tableView.isEqual(interests) ? "Interests" : "Skills")
         let cell = tableView.dequeueReusableCellWithIdentifier(id, forIndexPath: indexPath) ?? UITableViewCell.init(style: .Default, reuseIdentifier: id)
-        cell.textLabel!.text = tableView.isEqual(interests) ? interestsList[indexPath.row] : skillsList[indexPath.row]
-        cell.layoutIfNeeded()
+        for subview in cell.subviews {
+            if ((subview as? EditableTableTextField) != nil) {
+                let textField = subview as! EditableTableTextField
+                textField.index = indexPath.row
+                textField.sourceArray = tableView.isEqual(interests) ? interestsList : skillsList
+                textField.text = tableView.isEqual(interests) ? interestsList[indexPath.row] : skillsList[indexPath.row]
+            }
+        }
         return cell
+    }
+    
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if let editTextField = textField as? EditableTableTextField {
+            editTextField.sourceArray[editTextField.index] = textField.text!
+        }
+        profileChanged(textField)
+    }
+    
+    @IBAction func profileChanged(sender: AnyObject) {
+        profile!.userDescription = userDescription.text ?? ""
+        profile!.startupName = startupName.text ?? ""
+        let parts = fullName.text!.characters.split(2, allowEmptySlices: false, isSeparator: {$0 == " "}).map(String.init)
+        profile!.firstName = parts[0]
+        profile!.lastName = parts[1]
+        profile!.startupDescription = startupDescription.text
+        profile!.interests = interestsList
+        profile!.skills = skillsList
+        profile!.update()
     }
     
     @IBAction func interestsAdd(sender: UIButton!) {
         interestsList.append("New interest")
         interests.insertRowsAtIndexPaths([NSIndexPath.init(forRow: interestsList.count - 1, inSection: 0)], withRowAnimation: .Automatic)
         interests.setNeedsLayout()
+        skills.setNeedsLayout()
+        profileChanged(sender)
     }
     
     @IBAction func skillsAdd(sender: UIButton!) {
         skillsList.append("New skill")
         skills.insertRowsAtIndexPaths([NSIndexPath.init(forRow: skillsList.count - 1, inSection: 0)], withRowAnimation: .Automatic)
         skills.setNeedsLayout()
-        skills.layoutSubviews()
+        interests.setNeedsLayout()
+        profileChanged(sender)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        interests.autoresizingMask = .FlexibleHeight
         // Do any additional setup after loading the view, typically from a nib.
     }
     
