@@ -88,7 +88,7 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
             if ((subview as? EditableTableTextField) != nil) {
                 let textField = subview as! EditableTableTextField
                 textField.index = indexPath.row
-                textField.sourceArray = tableView.isEqual(interests) ? interestsList : skillsList
+                textField.sourceArray = tableView.isEqual(interests) ? "i" : "s"
                 textField.text = tableView.isEqual(interests) ? interestsList[indexPath.row] : skillsList[indexPath.row]
             }
         }
@@ -98,12 +98,19 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
     
     func textFieldDidEndEditing(textField: UITextField) {
         if let editTextField = textField as? EditableTableTextField {
-            editTextField.sourceArray[editTextField.index] = textField.text!
+            if (editTextField.sourceArray == "i") {
+                self.interestsList[editTextField.index] = textField.text!
+            } else {
+                self.skillsList[editTextField.index] = textField.text!
+            }
         }
         profileChanged(textField)
     }
     
     @IBAction func profileChanged(sender: AnyObject) {
+        if fullName.text!.isEmpty {
+            return
+        }
         profile!.userDescription = userDescription.text ?? ""
         profile!.startupName = startupName.text ?? ""
         let parts = fullName.text!.characters.split(2, allowEmptySlices: false, isSeparator: {$0 == " "}).map(String.init)
