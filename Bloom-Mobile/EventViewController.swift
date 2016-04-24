@@ -28,8 +28,8 @@ class EventViewController: UIViewController, UINavigationControllerDelegate {
         self.summary.text = event.summary
         self.eventDescription.text = event.eventDescription
         self.location.text = event.location
-        self.startTime.text = event.startTime
-        self.endTime.text = event.endTime
+        self.startTime.text = ""
+        self.endTime.text = ""
         }
     }
 

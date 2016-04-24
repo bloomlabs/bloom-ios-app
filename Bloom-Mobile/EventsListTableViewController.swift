@@ -47,7 +47,7 @@ class EventsListTableViewController: UITableViewController {
     
     //MARK: Load Events helper functions
     
-    
+    /*
     func loadSampleEvents(){
         
         let event1 = Event(summary: "First event", eventDescription: "Boring", location: "Nowhere", startTime: "Now", endTime: "Later")
@@ -56,15 +56,30 @@ class EventsListTableViewController: UITableViewController {
         events += [event1!, event2!] //for some reason we need the exclamation mark. I think it forces an unwrap because Event could be nil
         
         super.viewDidLoad()
-    }
+    }*/
     
     func loadActualEvents(itemList:[[String:AnyObject]]){
         print("here")
         for event in itemList {
             let summary = event["summary"]
-            let newEvent = Event(summary: summary as! String, eventDescription: "Testing", location: "here", startTime: "now", endTime: "then")
-            events.append(newEvent!)
-            //print("here")
+            //let start = event["start"] as! [[String:AnyObject]]
+            //let end = event["end"] as! [[String:AnyObject]]
+            //let newEvent = Event(summary: summary as! String, eventDescription: "Testing", location: "here", start: start, end: end)
+            //events.append(newEvent!)
+            //print(event["start"]!["dateTime"]!)
+            
+            print()
+            
+            var question = event["start"]!["dateTime"]!
+            print(question)
+            //Use NSDateFormatter 
+            
+            let startDate = NSDateFormatter()
+            startDate.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+            var dateString = event["start"]!["dateTime"]! as! String
+            var formattedDate = startDate.dateFromString(dateString)
+            print(formattedDate) //it's doing time - timezone
+            
             
         }
         

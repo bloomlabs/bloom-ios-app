@@ -15,21 +15,23 @@ class Event: NSObject {
     var summary: String!
     var eventDescription: String?
     var location: String?
-    var startTime: String?
-    var endTime: String?
+    //var startTime: String?
+    //var endTime: String?
+    var start:AnyObject?
+    var end:AnyObject?
     
     
     //MARK: Initialization
     
-    init?(summary:String!, eventDescription:String?, location:String?, startTime:String?, endTime:String?) {
+    init?(summary:String!, eventDescription:String?, location:String?, start:AnyObject?, end:AnyObject?) {
         
         super.init()
         // Initialize stored properties.
         self.summary = summary
         self.eventDescription = eventDescription
         self.location = location
-        self.startTime = startTime
-        self.endTime = endTime
+        self.start = start
+        self.end = end
         
         
         if(summary.isEmpty){
