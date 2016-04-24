@@ -10,7 +10,7 @@ import UIKit
 
 class EditableTableTextField: UITextField {
     var index:Int = 0
-    var sourceArray:[AnyObject] = []
+    var sourceArray:String = ""
     /*
     // Only override drawRect: if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
