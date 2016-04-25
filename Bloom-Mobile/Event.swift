@@ -17,13 +17,13 @@ class Event: NSObject {
     var location: String?
     //var startTime: String?
     //var endTime: String?
-    var start:AnyObject?
-    var end:AnyObject?
+    var start:NSDate?
+    var end:NSDate?
     
     
     //MARK: Initialization
     
-    init?(summary:String!, eventDescription:String?, location:String?, start:AnyObject?, end:AnyObject?) {
+    init?(summary:String!, eventDescription:String?, location:String?, start:NSDate?, end:NSDate?) {
         
         super.init()
         // Initialize stored properties.

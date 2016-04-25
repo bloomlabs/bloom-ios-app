@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Events List Table View Controller-->
@@ -21,20 +22,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-iv-yeR">
-                                            <rect key="frame" x="8" y="8" width="163" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" placeholderIntrinsicWidth="163" placeholderIntrinsicHeight="21" text="Summary" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3g4-iv-yeR">
+                                            <rect key="frame" x="8" y="0.0" width="584" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPM-Yg-Mfx">
-                                            <rect key="frame" x="8" y="37" width="163" height="21"/>
+                                            <rect key="frame" x="8" y="60" width="584" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7gf-dE-uJ6">
-                                            <rect key="frame" x="188" y="8" width="88" height="21"/>
+                                            <rect key="frame" x="8" y="34" width="584" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
@@ -103,6 +104,13 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XC1-ZZ-TA6">
+                                <rect key="frame" x="70" y="139" width="460" height="30"/>
+                                <state key="normal" title="Save Event"/>
+                                <connections>
+                                    <action selector="addEvent:" destination="ubu-5J-JYH" eventType="touchUpInside" id="hwS-6r-xlj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -115,6 +123,9 @@
                             <constraint firstItem="y5X-5S-iQr" firstAttribute="top" secondItem="8fw-w8-Lnw" secondAttribute="bottom" constant="50" id="PD4-4g-h28"/>
                             <constraint firstItem="6sh-Hp-KrB" firstAttribute="centerX" secondItem="nsh-7c-rQ2" secondAttribute="centerX" id="ZOd-o6-Rhh"/>
                             <constraint firstItem="y5X-5S-iQr" firstAttribute="centerX" secondItem="nsh-7c-rQ2" secondAttribute="centerX" id="b1k-9P-avp"/>
+                            <constraint firstItem="8fw-w8-Lnw" firstAttribute="top" secondItem="XC1-ZZ-TA6" secondAttribute="bottom" constant="50" id="hsq-ci-z3h"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="XC1-ZZ-TA6" secondAttribute="trailing" constant="50" id="nNi-0S-eEo"/>
+                            <constraint firstItem="XC1-ZZ-TA6" firstAttribute="leading" secondItem="nsh-7c-rQ2" secondAttribute="leadingMargin" constant="50" id="wAT-J4-CLC"/>
                             <constraint firstItem="P5U-ga-WNE" firstAttribute="top" secondItem="y5X-5S-iQr" secondAttribute="bottom" constant="50" id="y5v-QN-1hC"/>
                         </constraints>
                     </view>

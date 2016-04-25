@@ -61,24 +61,34 @@ class EventsListTableViewController: UITableViewController {
     func loadActualEvents(itemList:[[String:AnyObject]]){
         print("here")
         for event in itemList {
-            let summary = event["summary"]
-            //let start = event["start"] as! [[String:AnyObject]]
-            //let end = event["end"] as! [[String:AnyObject]]
-            //let newEvent = Event(summary: summary as! String, eventDescription: "Testing", location: "here", start: start, end: end)
-            //events.append(newEvent!)
-            //print(event["start"]!["dateTime"]!)
+            let summary = event["summary"] as! String
+            let description = ""//event["description"] as! String
             
-            print()
+            var location = ""
+            if let existingLocation = event["location"]
+            {
+                location = existingLocation as! String
+            }
             
-            var question = event["start"]!["dateTime"]!
-            print(question)
-            //Use NSDateFormatter 
+            //Get the dates out of the strings
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+            dateFormatter.timeZone = NSTimeZone.localTimeZone()
             
-            let startDate = NSDateFormatter()
-            startDate.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-            var dateString = event["start"]!["dateTime"]! as! String
-            var formattedDate = startDate.dateFromString(dateString)
-            print(formattedDate) //it's doing time - timezone
+            let startString = event["start"]!["dateTime"]! as! String
+            let startDate = dateFormatter.dateFromString(startString)
+          
+            let endString = event["end"]!["dateTime"]! as! String
+            let endDate = dateFormatter.dateFromString(endString)
+            
+            /*
+            let start = NSDate()//event["start"] as! [[String:AnyObject]]
+            let end = NSDate()///event["end"] as! [[String:AnyObject]]
+            */
+            
+            let newEvent = Event(summary: summary, eventDescription: description, location: location, start: startDate, end: endDate)
+            events.append(newEvent!)
+           
             
             
         }

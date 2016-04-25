@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import EventKit
 
 class EventViewController: UIViewController, UINavigationControllerDelegate {
     
@@ -18,35 +19,83 @@ class EventViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var endTime: UILabel!
     
     var event: Event!
-
+    var savedEventId : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         if let event = event { //We know we will have it but you still need to check because otherwise it doesn't like it
-        self.summary.text = event.summary
-        self.eventDescription.text = event.eventDescription
-        self.location.text = event.location
-        self.startTime.text = ""
-        self.endTime.text = ""
+            self.summary.text = event.summary
+            self.eventDescription.text = event.eventDescription
+            self.location.text = event.location
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+            dateFormatter.timeZone = NSTimeZone.localTimeZone()
+            
+            self.startTime.text = dateFormatter.stringFromDate(event.start!)
+            self.endTime.text = dateFormatter.stringFromDate(event.end!)
+            
         }
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Calendar 
+    
+    // Creates an event in the EKEventStore. The method assumes the eventStore is created and
+    // accessible
+    func createEvent(eventStore: EKEventStore, title: String, location:String, startDate: NSDate, endDate: NSDate) {
+        let event = EKEvent(eventStore: eventStore)
+        //TODO: Add alarm with creation of event
+        event.title = title
+        event.location = location
+        event.startDate = startDate
+        event.endDate = endDate
+        event.calendar = eventStore.defaultCalendarForNewEvents
+        do {
+            try eventStore.saveEvent(event, span: .ThisEvent)
+            savedEventId = event.eventIdentifier
+        } catch {
+            print("Bad things happened")
+        }
     }
-    */
-
+    
+    @IBAction func addEvent(sender: UIButton) {
+        let eventStore = EKEventStore()
+        
+        let title = event.summary
+        let location = event.location
+        let startDate = event.start
+        let endDate = event.end
+        
+        
+        if (EKEventStore.authorizationStatusForEntityType(.Event) != EKAuthorizationStatus.Authorized) {
+            eventStore.requestAccessToEntityType(.Event, completion: {
+                granted, error in
+                self.createEvent(eventStore, title: title!, location: location!, startDate: startDate!, endDate: endDate!)
+            })
+        } else {
+            createEvent(eventStore, title: title!, location: location!, startDate: startDate!, endDate: endDate!)
+        }
+    }
+    
+    
+    
+    
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
