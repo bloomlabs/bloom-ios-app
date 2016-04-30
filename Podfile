@@ -3,6 +3,7 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 pod 'Google/SignIn'
+pod 'EstimoteIndoorSDK'
 
 target 'Bloom-Mobile' do
 

@@ -9,6 +9,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var userDescription: UITextField!
     @IBOutlet weak var startupName: UITextField!
     @IBOutlet weak var startupDescription: UITextView!
@@ -36,15 +37,15 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         startupDescription.editable = editable
         interestsAddButton.hidden = !editable
         skillsAddButton.hidden = !editable
+        saveButton.hidden = !editable
+        interests.editing = editable
+        skills.editing = editable
         
         if (editable) {
             userDescription.text = (userDescription.text)!.isEmpty ? "A short description of you" : userDescription.text
             startupName.text = (startupName.text)!.isEmpty ? "Your Bloom project's name" : startupName.text
             startupDescription.text = (startupDescription.text)!.isEmpty ? "A short description of your project" : startupDescription.text
             fullName.text = (fullName.text)!.isEmpty ? "Your name" : fullName.text
-            
-            interests.editing = true
-            skills.editing = true
         }
         
         interests.reloadData()
@@ -107,19 +108,30 @@ class ProfileViewController: UIViewController, UITableViewDataSource, UITableVie
         profileChanged(textField)
     }
     
-    @IBAction func profileChanged(sender: AnyObject) {
-        if fullName.text!.isEmpty {
+    @IBAction func saveButtonClick(sender: AnyObject) {
+        let btn:UIButton = sender as! UIButton
+        if !btn.enabled {
             return
         }
-        profile!.userDescription = userDescription.text ?? ""
-        profile!.startupName = startupName.text ?? ""
         let parts = fullName.text!.characters.split(2, allowEmptySlices: false, isSeparator: {$0 == " "}).map(String.init)
         profile!.firstName = parts[0]
         profile!.lastName = parts[1]
+        profile!.userDescription = userDescription.text ?? ""
+        profile!.startupName = startupName.text ?? ""
         profile!.startupDescription = startupDescription.text
         profile!.interests = interestsList
         profile!.skills = skillsList
         profile!.update()
+        btn.enabled = false
+    }
+    
+    @IBAction func profileChanged(sender: AnyObject) {
+        saveButton.enabled = false
+        let parts = fullName.text!.characters.split(2, allowEmptySlices: false, isSeparator: {$0 == " "}).map(String.init)
+        saveButton.enabled = parts.count >= 2
+        if parts.count < 2 {
+            return
+        }
     }
     
     @IBAction func interestsAdd(sender: UIButton!) {
