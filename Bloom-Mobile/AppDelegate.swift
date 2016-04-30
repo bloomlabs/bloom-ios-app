@@ -9,11 +9,26 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, EILIndoorLocationManagerDelegate  {
     var window: UIWindow?
+    let beaconManager = ESTBeaconManager()
+    let locationManager = EILIndoorLocationManager()
+    var location: EILLocation!
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        self.locationManager.delegate = self
+        self.beaconManager.requestAlwaysAuthorization()
+        ESTConfig.setupAppID("bloom-app-b5e", andAppToken: "5aa7f32974cec8b8fa5e900f2d01ebbe")
+        let fetchLocationRequest = EILRequestFetchLocation(locationIdentifier: "bloom-lab-at-st-cats")
+        fetchLocationRequest.sendRequestWithCompletion { (location, error) in
+            if location != nil {
+                self.location = location!
+                self.locationManager.startPositionUpdatesForLocation(self.location)
+            } else {
+                print("can't fetch location: \(error)")
+            }
+        }
         var configureError: NSError?
         GGLContext.sharedInstance().configureWithError(&configureError)
         assert(configureError == nil, "Error configuring Google services: \(configureError)")
@@ -21,6 +36,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
         GIDSignIn.sharedInstance().delegate = self
         
         return true
+    }
+    
+    func indoorLocationManager(manager: EILIndoorLocationManager!,
+                               didFailToUpdatePositionWithError error: NSError!) {
+        print("failed to update position: \(error)")
+    }
+    
+    func indoorLocationManager(manager: EILIndoorLocationManager!,
+                               didUpdatePosition position: EILOrientedPoint!,
+                                                 withAccuracy positionAccuracy: EILPositionAccuracy,
+                                                              inLocation location: EILLocation!) {
+        var accuracy: String!
+        switch positionAccuracy {
+        case .VeryHigh: accuracy = "+/- 1.00m"
+        case .High:     accuracy = "+/- 1.62m"
+        case .Medium:   accuracy = "+/- 2.62m"
+        case .Low:      accuracy = "+/- 4.24m"
+        case .VeryLow:  accuracy = "+/- ? :-("
+        case .Unknown:  accuracy = "unknown"
+        }
+        print(String(format: "x: %5.2f, y: %5.2f, orientation: %3.0f, accuracy: %@",
+            position.x, position.y, position.orientation, accuracy))
     }
     
     func application(application: UIApplication,

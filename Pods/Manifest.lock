@@ -1,4 +1,7 @@
 PODS:
+  - EstimoteIndoorSDK (2.2.0):
+    - EstimoteSDK (~> 3.8)
+  - EstimoteSDK (3.8.2)
   - Google/Core (2.0.3):
     - GoogleInterchangeUtilities (~> 1.0)
     - GoogleNetworkingUtilities (~> 1.0)
@@ -24,13 +27,14 @@ PODS:
   - GoogleSymbolUtilities (1.1.0)
   - GoogleUtilities (1.2.0):
     - GoogleSymbolUtilities (~> 1.0)
-  - Just (0.4.7)
 
 DEPENDENCIES:
+  - EstimoteIndoorSDK
   - Google/SignIn
-  - Just
 
 SPEC CHECKSUMS:
+  EstimoteIndoorSDK: 4e0a3fc860041915341dcac0f858803f9a0f0c80
+  EstimoteSDK: 5e36b596f9f28161bff35b086d9f70282be5f513
   Google: 61379f0072bc561a7e174d23a6cbe41bd6d8599c
   GoogleAppUtilities: 974598e8ed618c74ead33541d9caffbc3d144266
   GoogleAuthUtilities: 79e4143c77a08081a480b08df27a066cc8944f43
@@ -39,6 +43,5 @@ SPEC CHECKSUMS:
   GoogleSignIn: 3d571172b8603be39dcb1705d8217146bb76fe62
   GoogleSymbolUtilities: eb3965ea12710569c7b80db198a39e39b18613f7
   GoogleUtilities: 85f8ad6b251544286a97163133d042ec95f889c5
-  Just: 946bae197f898da6b49e27e10dbe9dfbf1216f29
 
 COCOAPODS: 0.39.0
