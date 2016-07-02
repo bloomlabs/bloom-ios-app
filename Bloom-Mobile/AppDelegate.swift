@@ -24,7 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, EILInd
         fetchLocationRequest.sendRequestWithCompletion { (location, error) in
             if location != nil {
                 self.location = location!
+                self.locationManager.startMonitoringForLocation(self.location)
                 self.locationManager.startPositionUpdatesForLocation(self.location)
+                print(self.location)
             } else {
                 print("Can't fetch location: \(error)")
             }
