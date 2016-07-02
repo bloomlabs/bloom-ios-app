@@ -31,6 +31,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate {
             self.eventDescription.text = event.eventDescription
             self.location.text = event.location
             
+            //TODO: Make the date more human readable
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
             dateFormatter.timeZone = NSTimeZone.localTimeZone()

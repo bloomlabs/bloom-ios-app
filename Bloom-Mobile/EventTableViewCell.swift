@@ -13,7 +13,7 @@ class EventTableViewCell: UITableViewCell {
     //MARK: Properties
     @IBOutlet weak var summary: UILabel!
     @IBOutlet weak var location: UILabel!
-    @IBOutlet weak var eventDescription: UILabel!
+    
     
   
 

@@ -58,6 +58,8 @@ class EventsListTableViewController: UITableViewController {
         super.viewDidLoad()
     }*/
     
+
+    
     func loadActualEvents(itemList:[[String:AnyObject]]){
         //print("here")
         for event in itemList {
@@ -144,7 +146,7 @@ class EventsListTableViewController: UITableViewController {
         // Fetches the appropriate event for the data source layout.
         let event = events[indexPath.row]
         cell.summary.text = event.summary
-        cell.eventDescription.text = event.eventDescription
+        //cell.eventDescription.text = event.eventDescription
         cell.location.text = event.location
         
         return cell
