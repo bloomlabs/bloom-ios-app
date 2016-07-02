@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hpC-qy-apx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hpC-qy-apx">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -79,11 +79,20 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5X-5S-iQr">
                                 <rect key="frame" x="256" y="290" width="88" height="21"/>
                                 <constraints>
+<<<<<<< HEAD
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="M63-ob-gRe"/>
+=======
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="88" id="6k7-ZD-MH2"/>
+>>>>>>> 3d0db38bed5a8461bb2a79371a6ffec2f9a47671
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="6k7-ZD-MH2"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5U-ga-WNE">
                                 <rect key="frame" x="267" y="361" width="66" height="21"/>
@@ -125,11 +134,17 @@
                             <constraint firstItem="y5X-5S-iQr" firstAttribute="top" secondItem="8fw-w8-Lnw" secondAttribute="bottom" constant="50" id="PD4-4g-h28"/>
                             <constraint firstItem="6sh-Hp-KrB" firstAttribute="centerX" secondItem="nsh-7c-rQ2" secondAttribute="centerX" id="ZOd-o6-Rhh"/>
                             <constraint firstItem="y5X-5S-iQr" firstAttribute="centerX" secondItem="nsh-7c-rQ2" secondAttribute="centerX" id="b1k-9P-avp"/>
+                            <constraint firstItem="y5X-5S-iQr" firstAttribute="width" relation="lessThanOrEqual" secondItem="nsh-7c-rQ2" secondAttribute="width" id="cSx-JD-OKy"/>
                             <constraint firstItem="8fw-w8-Lnw" firstAttribute="top" secondItem="XC1-ZZ-TA6" secondAttribute="bottom" constant="50" id="hsq-ci-z3h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XC1-ZZ-TA6" secondAttribute="trailing" constant="50" id="nNi-0S-eEo"/>
                             <constraint firstItem="XC1-ZZ-TA6" firstAttribute="leading" secondItem="nsh-7c-rQ2" secondAttribute="leadingMargin" constant="50" id="wAT-J4-CLC"/>
                             <constraint firstItem="P5U-ga-WNE" firstAttribute="top" secondItem="y5X-5S-iQr" secondAttribute="bottom" constant="50" id="y5v-QN-1hC"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="cSx-JD-OKy"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="V8b-gv-Ni1"/>
                     <connections>

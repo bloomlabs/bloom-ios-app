@@ -67,7 +67,7 @@ class EventsListTableViewController: UITableViewController {
             //Get the dates out of the strings
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
-            dateFormatter.timeZone = NSTimeZone.localTimeZone()
+            dateFormatter.timeZone = .localTimeZone()
             
             let startString = event["start"]!["dateTime"]! as! String
             let startDate = dateFormatter.dateFromString(startString)
@@ -107,11 +107,13 @@ class EventsListTableViewController: UITableViewController {
                 events.append(newEvent!)
             }
         }
-        
-        events.sortInPlace{ (e1: Event, e2: Event) -> Bool in
-          if(e1.start.)
-            
-            return false
+        events.sortInPlace{(e1: Event, e2: Event) -> Bool in
+            let res = e1.start!.compare(e2.start!)
+            if res == .OrderedAscending || res == .OrderedSame {
+                return true
+            } else {
+                return false
+            }
         }
         
         dispatch_async(dispatch_get_main_queue()) {
