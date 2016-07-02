@@ -26,7 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, EILInd
                 self.location = location!
                 self.locationManager.startPositionUpdatesForLocation(self.location)
             } else {
-                print("can't fetch location: \(error)")
+                print("Can't fetch location: \(error)")
             }
         }
         var configureError: NSError?
@@ -38,15 +38,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, EILInd
         return true
     }
     
-    func indoorLocationManager(manager: EILIndoorLocationManager!,
-                               didFailToUpdatePositionWithError error: NSError!) {
-        print("failed to update position: \(error)")
+    func indoorLocationManager(manager: EILIndoorLocationManager,
+                               didFailToUpdatePositionWithError error: NSError) {
+        print("Failed to update position: \(error)")
     }
     
-    func indoorLocationManager(manager: EILIndoorLocationManager!,
-                               didUpdatePosition position: EILOrientedPoint!,
+    func indoorLocationManager(manager: EILIndoorLocationManager,
+                               didUpdatePosition position: EILOrientedPoint,
                                                  withAccuracy positionAccuracy: EILPositionAccuracy,
-                                                              inLocation location: EILLocation!) {
+                                                              inLocation location: EILLocation) {
         var accuracy: String!
         switch positionAccuracy {
         case .VeryHigh: accuracy = "+/- 1.00m"

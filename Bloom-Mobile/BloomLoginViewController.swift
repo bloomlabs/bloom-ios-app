@@ -11,6 +11,7 @@ import UIKit
 class BloomLoginViewController: UIViewController, GIDSignInUIDelegate {
     @IBOutlet weak var signInButton: GIDSignInButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var errorLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,13 +48,16 @@ class BloomLoginViewController: UIViewController, GIDSignInUIDelegate {
             let user_id:String = String(json["id"]!)
             API.setUserToken(token, user_id: user_id)
             MemberProfile.loadProfile(user_id, callback: {(profile) in
-                MemberProfile.setPrimaryProfile(profile!)
                 self.activityIndicator.stopAnimating()
+                if profile == nil {
+                    self.errorLabel.text = "Could not sign you in with Bloom."
+                    self.errorLabel.textColor = UIColor.redColor()
+                } else {
+                    MemberProfile.setPrimaryProfile(profile!)
+                    self.performSegueWithIdentifier("loggedin", sender: self)
+                }
             })
         })
-        
-        
-        self.performSegueWithIdentifier("loggedin", sender: self)
     }
     
     /*
