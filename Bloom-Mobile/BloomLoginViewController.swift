@@ -47,7 +47,7 @@ class BloomLoginViewController: UIViewController, GIDSignInUIDelegate {
             let user_id:String = String(json["id"]!)
             API.setUserToken(token, user_id: user_id)
             MemberProfile.loadProfile(user_id, callback: {(profile) in
-                MemberProfile.setPrimaryProfile(profile!)
+               // MemberProfile.setPrimaryProfile(profile!)
                 self.activityIndicator.stopAnimating()
             })
         })

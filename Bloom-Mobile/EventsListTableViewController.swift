@@ -59,16 +59,8 @@ class EventsListTableViewController: UITableViewController {
     }*/
     
     func loadActualEvents(itemList:[[String:AnyObject]]){
-        print("here")
+        //print("here")
         for event in itemList {
-            let summary = event["summary"] as! String
-            let description = ""//event["description"] as! String
-            
-            var location = ""
-            if let existingLocation = event["location"]
-            {
-                location = existingLocation as! String
-            }
             
             //Get the dates out of the strings
             let dateFormatter = NSDateFormatter()
@@ -78,19 +70,34 @@ class EventsListTableViewController: UITableViewController {
             let startString = event["start"]!["dateTime"]! as! String
             let startDate = dateFormatter.dateFromString(startString)
           
-            let endString = event["end"]!["dateTime"]! as! String
-            let endDate = dateFormatter.dateFromString(endString)
-            
-            /*
-            let start = NSDate()//event["start"] as! [[String:AnyObject]]
-            let end = NSDate()///event["end"] as! [[String:AnyObject]]
-            */
-            
-            let newEvent = Event(summary: summary, eventDescription: description, location: location, start: startDate, end: endDate)
-            events.append(newEvent!)
-           
-            
-            
+            if startDate!.timeIntervalSinceNow.isSignMinus {
+                //myDate is earlier than Now (date and time)
+                
+                
+                
+            } else {
+                //myDate is equal or after than Now (date and time)
+                //Get summary, description and location
+                let summary = event["summary"] as! String
+                
+                var description = ""//event["description"] as! String
+                if let existingDescription = event["description"]
+                {
+                    description = existingDescription as! String
+                }
+                
+                var location = ""
+                if let existingLocation = event["location"]
+                {
+                    location = existingLocation as! String
+                }
+                
+                let endString = event["end"]!["dateTime"]! as! String
+                let endDate = dateFormatter.dateFromString(endString)
+                
+                let newEvent = Event(summary: summary, eventDescription: description, location: location, start: startDate, end: endDate)
+                events.append(newEvent!)
+            }
         }
         
         dispatch_async(dispatch_get_main_queue()) {
