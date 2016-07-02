@@ -47,7 +47,7 @@ class BloomLoginViewController: UIViewController, GIDSignInUIDelegate {
             let token:String = String(json["token"]!)
             let user_id:String = String(json["id"]!)
             API.setUserToken(token, user_id: user_id)
-            MemberProfile.loadProfile(user_id, callback: {(profile) in
+            MemberProfile.loadProfile(user_id, callback: {(profile) in 
                 self.activityIndicator.stopAnimating()
                 if profile == nil {
                     self.errorLabel.text = "Could not sign you in with Bloom."

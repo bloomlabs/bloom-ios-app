@@ -58,6 +58,11 @@ class EventViewController: UIViewController, UINavigationControllerDelegate {
         event.startDate = startDate
         event.endDate = endDate
         event.calendar = eventStore.defaultCalendarForNewEvents
+        
+        //EKAlarm code
+        let eventAlarm = EKAlarm(relativeOffset: -86400)
+        event.addAlarm(eventAlarm)
+        
         do {
             try eventStore.saveEvent(event, span: .ThisEvent)
             savedEventId = event.eventIdentifier
