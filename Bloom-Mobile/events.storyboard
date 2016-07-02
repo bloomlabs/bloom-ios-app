@@ -79,11 +79,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5X-5S-iQr">
                                 <rect key="frame" x="256" y="290" width="88" height="21"/>
                                 <constraints>
-<<<<<<< HEAD
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="M63-ob-gRe"/>
-=======
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="88" id="6k7-ZD-MH2"/>
->>>>>>> 3d0db38bed5a8461bb2a79371a6ffec2f9a47671
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
