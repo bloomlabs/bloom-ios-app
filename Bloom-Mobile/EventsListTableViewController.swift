@@ -71,7 +71,7 @@ class EventsListTableViewController: UITableViewController {
             
             let startString = event["start"]!["dateTime"]! as! String
             let startDate = dateFormatter.dateFromString(startString)
-          
+                      
             if startDate!.timeIntervalSinceNow.isSignMinus {
                 //myDate is earlier than Now (date and time)
                 
@@ -87,11 +87,17 @@ class EventsListTableViewController: UITableViewController {
                 {
                     description = existingDescription as! String
                 }
+                else{ //If there isn't a description, don't show
+                    continue
+                }
                 
                 var location = ""
                 if let existingLocation = event["location"]
                 {
                     location = existingLocation as! String
+                }
+                else{ //If there isn't a location, don't show
+                    continue
                 }
                 
                 let endString = event["end"]!["dateTime"]! as! String
@@ -100,6 +106,12 @@ class EventsListTableViewController: UITableViewController {
                 let newEvent = Event(summary: summary, eventDescription: description, location: location, start: startDate, end: endDate)
                 events.append(newEvent!)
             }
+        }
+        
+        events.sortInPlace{ (e1: Event, e2: Event) -> Bool in
+          if(e1.start.)
+            
+            return false
         }
         
         dispatch_async(dispatch_get_main_queue()) {

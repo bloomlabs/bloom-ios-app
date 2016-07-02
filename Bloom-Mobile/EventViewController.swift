@@ -33,7 +33,8 @@ class EventViewController: UIViewController, UINavigationControllerDelegate {
             
             //TODO: Make the date more human readable
             let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZZ"
+            dateFormatter.dateStyle = .MediumStyle //Compiler infers what goes before the dot by checking what the left side requires
+            dateFormatter.timeStyle = .ShortStyle
             dateFormatter.timeZone = NSTimeZone.localTimeZone()
             
             self.startTime.text = dateFormatter.stringFromDate(event.start!)
@@ -53,7 +54,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate {
     // accessible
     func createEvent(eventStore: EKEventStore, title: String, location:String, startDate: NSDate, endDate: NSDate) {
         let event = EKEvent(eventStore: eventStore)
-        //TODO: Add alarm with creation of event
+        
         event.title = title
         event.location = location
         event.startDate = startDate
@@ -61,7 +62,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate {
         event.calendar = eventStore.defaultCalendarForNewEvents
         
         //EKAlarm code
-        let eventAlarm = EKAlarm(relativeOffset: -86400)
+        let eventAlarm = EKAlarm(relativeOffset: -86400)//One day before
         event.addAlarm(eventAlarm)
         
         do {
@@ -72,6 +73,7 @@ class EventViewController: UIViewController, UINavigationControllerDelegate {
         }
     }
     
+    //TODO: Put a little pop-up to tell the user when the event has been saved
     @IBAction func addEvent(sender: UIButton) {
         let eventStore = EKEventStore()
         
